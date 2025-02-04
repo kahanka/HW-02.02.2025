@@ -1,7 +1,6 @@
 CREATE DATABASE CourseManagement;
 USE CourseManagement;
 
--- Users table
 CREATE TABLE users2 (
         id INT PRIMARY KEY AUTO_INCREMENT,
         first_name VARCHAR(50) NOT NULL,
@@ -10,7 +9,7 @@ password VARCHAR(255) NOT NULL,
 email VARCHAR(100) UNIQUE NOT NULL
 );
 
-        -- Courses table
+
 CREATE TABLE Courses (
         id INT PRIMARY KEY AUTO_INCREMENT,
         course_name VARCHAR(100) NOT NULL,
@@ -19,7 +18,7 @@ max_students INT NOT NULL
 );
 
 
-        -- Students table
+
 CREATE TABLE Students (
         id INT PRIMARY KEY AUTO_INCREMENT,
         first_name VARCHAR(50) NOT NULL,
@@ -32,7 +31,7 @@ FOREIGN KEY (course_id) REFERENCES Courses(id) ON DELETE SET NULL,
 FOREIGN KEY (registered_by) REFERENCES Users(id) ON DELETE SET NULL
 );
 
-        -- Enrollment table to track users signing up for students
+
 CREATE TABLE Enrollment (
         id INT PRIMARY KEY AUTO_INCREMENT,
         user_id INT NOT NULL,
